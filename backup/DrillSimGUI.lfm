@@ -1,0 +1,3394 @@
+object DrillSim: TDrillSim
+  Left = 0
+  Height = 671
+  Top = 340
+  Width = 1449
+  Caption = 'DrillSim 3.0'
+  ClientHeight = 671
+  ClientWidth = 1449
+  Menu = MainMenu1
+  OnActivate = FormActivate
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnDeactivate = FormDeactivate
+  Position = poScreenCenter
+  LCLVersion = '2.0.12.0'
+  object PumpData: TGroupBox
+    Left = 10
+    Height = 184
+    Top = 200
+    Width = 270
+    Caption = 'Pump Controls'
+    ClientHeight = 165
+    ClientWidth = 260
+    Color = 4832767
+    Font.Color = clTeal
+    Font.Height = -16
+    Font.Name = 'Sans'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 3
+    object Pump1Minus: TButton
+      Left = 208
+      Height = 30
+      Top = 10
+      Width = 23
+      Caption = '-'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      OnClick = Pump1MinusClick
+      ParentFont = False
+      TabOrder = 0
+    end
+    object Pump1Plus: TButton
+      Left = 230
+      Height = 30
+      Top = 10
+      Width = 25
+      Caption = '+'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      OnClick = Pump1PlusClick
+      ParentFont = False
+      TabOrder = 1
+    end
+    object PumpStrokesText: TStaticText
+      Left = 10
+      Height = 20
+      Top = 135
+      Width = 106
+      Caption = 'Total SPM'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      ParentFont = False
+      TabOrder = 2
+    end
+    object Pump1Value: TLabel
+      Left = 135
+      Height = 15
+      Top = 15
+      Width = 55
+      Alignment = taRightJustify
+      AutoSize = False
+      Caption = '999.999'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object Pump2Value: TLabel
+      Left = 135
+      Height = 15
+      Top = 55
+      Width = 55
+      Alignment = taRightJustify
+      AutoSize = False
+      Caption = '999.999'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object Pump3Value: TLabel
+      Left = 135
+      Height = 15
+      Top = 95
+      Width = 55
+      Alignment = taRightJustify
+      AutoSize = False
+      Caption = '999.999'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object PumpStrokesValue: TLabel
+      Left = 135
+      Height = 15
+      Top = 135
+      Width = 55
+      Alignment = taRightJustify
+      AutoSize = False
+      Caption = '999.999'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object Pump1Text: TStaticText
+      Left = 10
+      Height = 20
+      Top = 15
+      Width = 105
+      Caption = 'Pump 1 SPM'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      ParentFont = False
+      TabOrder = 3
+    end
+    object Pump2Text: TStaticText
+      Left = 10
+      Height = 20
+      Top = 55
+      Width = 104
+      Caption = 'Pump 2 SPM'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      ParentFont = False
+      TabOrder = 4
+    end
+    object Pump3Text: TStaticText
+      Left = 10
+      Height = 20
+      Top = 95
+      Width = 107
+      Caption = 'Pump 3 SPM'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      ParentFont = False
+      TabOrder = 5
+    end
+    object Pump2Minus: TButton
+      Left = 208
+      Height = 28
+      Top = 55
+      Width = 22
+      Caption = '-'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      OnClick = Pump2MinusClick
+      ParentFont = False
+      TabOrder = 6
+    end
+    object Pump2Plus: TButton
+      Left = 229
+      Height = 28
+      Top = 56
+      Width = 23
+      Caption = '+'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      OnClick = Pump2PlusClick
+      ParentFont = False
+      TabOrder = 7
+    end
+    object Pump3Minus: TButton
+      Left = 208
+      Height = 29
+      Top = 95
+      Width = 23
+      Caption = '-'
+      Color = clBlue
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      OnClick = Pump3MinusClick
+      ParentFont = False
+      TabOrder = 8
+    end
+    object Pump3Plus: TButton
+      Left = 230
+      Height = 29
+      Top = 95
+      Width = 23
+      Caption = '+'
+      Color = clBlue
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      OnClick = Pump3PlusClick
+      ParentFont = False
+      TabOrder = 9
+    end
+    object PumpStrokesTotalText: TStaticText
+      Left = 208
+      Height = 21
+      Top = 135
+      Width = 54
+      Caption = 'Total'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      ParentFont = False
+      TabOrder = 10
+    end
+  end
+  object BitData: TGroupBox
+    Left = 9
+    Height = 184
+    Top = 8
+    Width = 271
+    Caption = 'Bit Data'
+    ClientHeight = 165
+    ClientWidth = 261
+    Color = 12108288
+    Font.Color = clTeal
+    Font.Height = -16
+    Font.Name = 'Sans'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 0
+    object TotalDepthText: TStaticText
+      Left = 10
+      Height = 20
+      Top = 50
+      Width = 95
+      Caption = 'Total Depth'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      ParentFont = False
+      TabOrder = 1
+    end
+    object RPMplus: TButton
+      Left = 230
+      Height = 32
+      Top = 112
+      Width = 24
+      Caption = '+'
+      Color = clBlue
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      OnClick = RPMplusClick
+      ParentFont = False
+      TabOrder = 2
+    end
+    object RotaryRPMText: TStaticText
+      Left = 10
+      Height = 20
+      Top = 120
+      Width = 95
+      Caption = 'Rotary RPM'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      ParentFont = False
+      TabOrder = 3
+    end
+    object RPMvalue: TLabel
+      Left = 110
+      Height = 15
+      Top = 122
+      Width = 75
+      Alignment = taRightJustify
+      AutoSize = False
+      Caption = '999.999'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object WeightOnBitText: TStaticText
+      Left = 10
+      Height = 20
+      Top = 85
+      Width = 95
+      Caption = 'Weight On Bit'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      ParentFont = False
+      TabOrder = 4
+    end
+    object TotalDepthValue: TLabel
+      Left = 110
+      Height = 15
+      Top = 50
+      Width = 75
+      Alignment = taRightJustify
+      AutoSize = False
+      Caption = '999.999'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object WOBValue: TLabel
+      Left = 110
+      Height = 15
+      Top = 85
+      Width = 75
+      Alignment = taRightJustify
+      AutoSize = False
+      Caption = '999.999'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object TotalDepthUoMLabel: TStaticText
+      Left = 195
+      Height = 20
+      Top = 50
+      Width = 61
+      Caption = 'Units'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      ParentFont = False
+      TabOrder = 6
+    end
+    object WOBUoMLabel: TStaticText
+      Left = 194
+      Height = 20
+      Top = 85
+      Width = 60
+      Caption = 'Units'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      ParentFont = False
+      TabOrder = 7
+    end
+    object BitDepthValue: TLabel
+      Left = 110
+      Height = 15
+      Top = 15
+      Width = 75
+      Alignment = taRightJustify
+      AutoSize = False
+      Caption = '999.999'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object BitDepthUoMLabel: TStaticText
+      Left = 195
+      Height = 20
+      Top = 15
+      Width = 56
+      Caption = 'Units'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      ParentFont = False
+      TabOrder = 5
+    end
+    object BitDepthText: TStaticText
+      Left = 10
+      Height = 20
+      Top = 15
+      Width = 95
+      Caption = 'Bit Depth'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      ParentFont = False
+      TabOrder = 0
+    end
+    object RPMminus: TButton
+      Left = 207
+      Height = 32
+      Top = 112
+      Width = 24
+      Caption = '-'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      OnClick = RPMminusClick
+      ParentFont = False
+      TabOrder = 8
+    end
+  end
+  object DrillFloor: TGroupBox
+    Left = 289
+    Height = 216
+    Top = 8
+    Width = 329
+    Caption = 'Drill Floor'
+    ClientHeight = 197
+    ClientWidth = 319
+    Color = 11330763
+    Font.Color = clTeal
+    Font.Height = -16
+    Font.Name = 'Sans'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 1
+    object KellyHeightText: TLabel
+      Left = 8
+      Height = 16
+      Top = 8
+      Width = 29
+      Caption = 'Kelly'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      ParentColor = False
+      ParentFont = False
+    end
+    object DrillingStatusText: TLabel
+      Left = 8
+      Height = 16
+      Top = 45
+      Width = 39
+      Caption = 'Status'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      ParentColor = False
+      ParentFont = False
+    end
+    object ROPText: TLabel
+      Left = 8
+      Height = 16
+      Top = 80
+      Width = 27
+      Caption = 'ROP'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      ParentColor = False
+      ParentFont = False
+    end
+    object TimeText: TLabel
+      Left = 8
+      Height = 17
+      Top = 110
+      Width = 33
+      AutoSize = False
+      Caption = 'Time'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      ParentColor = False
+      ParentFont = False
+    end
+    object KellyHeightValue: TLabel
+      Left = 56
+      Height = 17
+      Top = 8
+      Width = 56
+      Alignment = taRightJustify
+      AutoSize = False
+      Caption = '999.999'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object KellyHeightUoMLabel: TStaticText
+      Left = 128
+      Height = 17
+      Top = 8
+      Width = 45
+      Caption = 'Units'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      ParentFont = False
+      TabOrder = 0
+    end
+    object DrillingStatusValue: TLabel
+      Left = 56
+      Height = 17
+      Top = 45
+      Width = 123
+      AutoSize = False
+      Caption = 'Status'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object ROPValue: TLabel
+      Left = 56
+      Height = 15
+      Top = 80
+      Width = 56
+      Alignment = taRightJustify
+      AutoSize = False
+      Caption = '999.999'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object TimeValue: TLabel
+      Left = 56
+      Height = 17
+      Top = 110
+      Width = 64
+      AutoSize = False
+      Caption = 'Time'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object ROPUoMLabel: TStaticText
+      Left = 128
+      Height = 17
+      Top = 80
+      Width = 72
+      Caption = 'Units'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      ParentFont = False
+      TabOrder = 1
+    end
+    object KellyImage: TImage
+      Left = 248
+      Height = 137
+      Top = 0
+      Width = 74
+      Center = True
+    end
+    object KellyScale: TImage
+      Left = 216
+      Height = 156
+      Top = 0
+      Width = 32
+      Center = True
+    end
+    object BushingImage: TImage
+      Left = 248
+      Height = 19
+      Top = 137
+      Width = 74
+      Center = True
+    end
+    object PipeMinus: TBCButton
+      Left = 8
+      Height = 20
+      Top = 136
+      Width = 91
+      StateClicked.Background.Gradient1.StartColor = 8404992
+      StateClicked.Background.Gradient1.EndColor = 4194304
+      StateClicked.Background.Gradient1.GradientType = gtRadial
+      StateClicked.Background.Gradient1.Point1XPercent = 50
+      StateClicked.Background.Gradient1.Point1YPercent = 100
+      StateClicked.Background.Gradient1.Point2XPercent = 0
+      StateClicked.Background.Gradient1.Point2YPercent = 0
+      StateClicked.Background.Gradient2.StartColor = clWhite
+      StateClicked.Background.Gradient2.EndColor = clBlack
+      StateClicked.Background.Gradient2.GradientType = gtLinear
+      StateClicked.Background.Gradient2.Point1XPercent = 0
+      StateClicked.Background.Gradient2.Point1YPercent = 0
+      StateClicked.Background.Gradient2.Point2XPercent = 0
+      StateClicked.Background.Gradient2.Point2YPercent = 100
+      StateClicked.Background.Gradient1EndPercent = 100
+      StateClicked.Background.Style = bbsGradient
+      StateClicked.Border.Style = bboNone
+      StateClicked.FontEx.Color = 16770790
+      StateClicked.FontEx.FontQuality = fqSystemClearType
+      StateClicked.FontEx.Shadow = True
+      StateClicked.FontEx.ShadowRadius = 2
+      StateClicked.FontEx.ShadowOffsetX = 1
+      StateClicked.FontEx.ShadowOffsetY = 1
+      StateClicked.FontEx.Style = [fsBold]
+      StateHover.Background.Gradient1.StartColor = 16744448
+      StateHover.Background.Gradient1.EndColor = 8404992
+      StateHover.Background.Gradient1.GradientType = gtRadial
+      StateHover.Background.Gradient1.Point1XPercent = 50
+      StateHover.Background.Gradient1.Point1YPercent = 100
+      StateHover.Background.Gradient1.Point2XPercent = 0
+      StateHover.Background.Gradient1.Point2YPercent = 0
+      StateHover.Background.Gradient2.StartColor = clWhite
+      StateHover.Background.Gradient2.EndColor = clBlack
+      StateHover.Background.Gradient2.GradientType = gtLinear
+      StateHover.Background.Gradient2.Point1XPercent = 0
+      StateHover.Background.Gradient2.Point1YPercent = 0
+      StateHover.Background.Gradient2.Point2XPercent = 0
+      StateHover.Background.Gradient2.Point2YPercent = 100
+      StateHover.Background.Gradient1EndPercent = 100
+      StateHover.Background.Style = bbsGradient
+      StateHover.Border.Style = bboNone
+      StateHover.FontEx.Color = clWhite
+      StateHover.FontEx.FontQuality = fqSystemClearType
+      StateHover.FontEx.Shadow = True
+      StateHover.FontEx.ShadowRadius = 2
+      StateHover.FontEx.ShadowOffsetX = 1
+      StateHover.FontEx.ShadowOffsetY = 1
+      StateHover.FontEx.Style = [fsBold]
+      StateNormal.Background.Gradient1.StartColor = 4194304
+      StateNormal.Background.Gradient1.EndColor = 8405056
+      StateNormal.Background.Gradient1.GradientType = gtLinear
+      StateNormal.Background.Gradient1.Point1XPercent = 0
+      StateNormal.Background.Gradient1.Point1YPercent = 0
+      StateNormal.Background.Gradient1.Point2XPercent = 0
+      StateNormal.Background.Gradient1.Point2YPercent = 100
+      StateNormal.Background.Gradient2.StartColor = 8405056
+      StateNormal.Background.Gradient2.EndColor = 4194304
+      StateNormal.Background.Gradient2.GradientType = gtRadial
+      StateNormal.Background.Gradient2.Point1XPercent = 50
+      StateNormal.Background.Gradient2.Point1YPercent = 100
+      StateNormal.Background.Gradient2.Point2XPercent = 0
+      StateNormal.Background.Gradient2.Point2YPercent = 0
+      StateNormal.Background.Gradient1EndPercent = 60
+      StateNormal.Background.Style = bbsGradient
+      StateNormal.Border.Style = bboNone
+      StateNormal.FontEx.Color = clWhite
+      StateNormal.FontEx.FontQuality = fqSystemClearType
+      StateNormal.FontEx.Height = 10
+      StateNormal.FontEx.Shadow = True
+      StateNormal.FontEx.ShadowRadius = 2
+      StateNormal.FontEx.ShadowOffsetX = 1
+      StateNormal.FontEx.ShadowOffsetY = 1
+      StateNormal.FontEx.Style = [fsBold]
+      Caption = 'Remove Pipe'
+      Color = clAqua
+      DropDownWidth = 16
+      DropDownArrowSize = 8
+      GlobalOpacity = 255
+      OnClick = PipeMinusClick
+      ParentColor = False
+      Rounding.RoundX = 6
+      Rounding.RoundY = 6
+      RoundingDropDown.RoundX = 1
+      RoundingDropDown.RoundY = 1
+      TextApplyGlobalOpacity = False
+      MemoryUsage = bmuHigh
+    end
+    object PipePlus: TBCButton
+      Left = 8
+      Height = 20
+      Top = 165
+      Width = 91
+      StateClicked.Background.Gradient1.StartColor = 8404992
+      StateClicked.Background.Gradient1.EndColor = 4194304
+      StateClicked.Background.Gradient1.GradientType = gtRadial
+      StateClicked.Background.Gradient1.Point1XPercent = 50
+      StateClicked.Background.Gradient1.Point1YPercent = 100
+      StateClicked.Background.Gradient1.Point2XPercent = 0
+      StateClicked.Background.Gradient1.Point2YPercent = 0
+      StateClicked.Background.Gradient2.StartColor = clWhite
+      StateClicked.Background.Gradient2.EndColor = clBlack
+      StateClicked.Background.Gradient2.GradientType = gtLinear
+      StateClicked.Background.Gradient2.Point1XPercent = 0
+      StateClicked.Background.Gradient2.Point1YPercent = 0
+      StateClicked.Background.Gradient2.Point2XPercent = 0
+      StateClicked.Background.Gradient2.Point2YPercent = 100
+      StateClicked.Background.Gradient1EndPercent = 100
+      StateClicked.Background.Style = bbsGradient
+      StateClicked.Border.Style = bboNone
+      StateClicked.FontEx.Color = 16770790
+      StateClicked.FontEx.FontQuality = fqSystemClearType
+      StateClicked.FontEx.Shadow = True
+      StateClicked.FontEx.ShadowRadius = 2
+      StateClicked.FontEx.ShadowOffsetX = 1
+      StateClicked.FontEx.ShadowOffsetY = 1
+      StateClicked.FontEx.Style = [fsBold]
+      StateHover.Background.Gradient1.StartColor = 16744448
+      StateHover.Background.Gradient1.EndColor = 8404992
+      StateHover.Background.Gradient1.GradientType = gtRadial
+      StateHover.Background.Gradient1.Point1XPercent = 50
+      StateHover.Background.Gradient1.Point1YPercent = 100
+      StateHover.Background.Gradient1.Point2XPercent = 0
+      StateHover.Background.Gradient1.Point2YPercent = 0
+      StateHover.Background.Gradient2.StartColor = clWhite
+      StateHover.Background.Gradient2.EndColor = clBlack
+      StateHover.Background.Gradient2.GradientType = gtLinear
+      StateHover.Background.Gradient2.Point1XPercent = 0
+      StateHover.Background.Gradient2.Point1YPercent = 0
+      StateHover.Background.Gradient2.Point2XPercent = 0
+      StateHover.Background.Gradient2.Point2YPercent = 100
+      StateHover.Background.Gradient1EndPercent = 100
+      StateHover.Background.Style = bbsGradient
+      StateHover.Border.Style = bboNone
+      StateHover.FontEx.Color = clWhite
+      StateHover.FontEx.FontQuality = fqSystemClearType
+      StateHover.FontEx.Shadow = True
+      StateHover.FontEx.ShadowRadius = 2
+      StateHover.FontEx.ShadowOffsetX = 1
+      StateHover.FontEx.ShadowOffsetY = 1
+      StateHover.FontEx.Style = [fsBold]
+      StateNormal.Background.Gradient1.StartColor = 4194304
+      StateNormal.Background.Gradient1.EndColor = 8405056
+      StateNormal.Background.Gradient1.GradientType = gtLinear
+      StateNormal.Background.Gradient1.Point1XPercent = 0
+      StateNormal.Background.Gradient1.Point1YPercent = 0
+      StateNormal.Background.Gradient1.Point2XPercent = 0
+      StateNormal.Background.Gradient1.Point2YPercent = 100
+      StateNormal.Background.Gradient2.StartColor = 8405056
+      StateNormal.Background.Gradient2.EndColor = 4194304
+      StateNormal.Background.Gradient2.GradientType = gtRadial
+      StateNormal.Background.Gradient2.Point1XPercent = 50
+      StateNormal.Background.Gradient2.Point1YPercent = 100
+      StateNormal.Background.Gradient2.Point2XPercent = 0
+      StateNormal.Background.Gradient2.Point2YPercent = 0
+      StateNormal.Background.Gradient1EndPercent = 60
+      StateNormal.Background.Style = bbsGradient
+      StateNormal.Border.Style = bboNone
+      StateNormal.FontEx.Color = clWhite
+      StateNormal.FontEx.FontQuality = fqSystemClearType
+      StateNormal.FontEx.Height = 10
+      StateNormal.FontEx.Shadow = True
+      StateNormal.FontEx.ShadowRadius = 2
+      StateNormal.FontEx.ShadowOffsetX = 1
+      StateNormal.FontEx.ShadowOffsetY = 1
+      StateNormal.FontEx.Style = [fsBold]
+      Caption = 'Add Pipe'
+      Color = clNone
+      DropDownWidth = 16
+      DropDownArrowSize = 8
+      GlobalOpacity = 255
+      OnClick = PipePlusClick
+      ParentColor = False
+      Rounding.RoundX = 6
+      Rounding.RoundY = 6
+      RoundingDropDown.RoundX = 1
+      RoundingDropDown.RoundY = 1
+      TextApplyGlobalOpacity = False
+      MemoryUsage = bmuHigh
+    end
+    object KellyUp: TBCButton
+      Left = 109
+      Height = 20
+      Top = 136
+      Width = 91
+      StateClicked.Background.Gradient1.StartColor = 8404992
+      StateClicked.Background.Gradient1.EndColor = 4194304
+      StateClicked.Background.Gradient1.GradientType = gtRadial
+      StateClicked.Background.Gradient1.Point1XPercent = 50
+      StateClicked.Background.Gradient1.Point1YPercent = 100
+      StateClicked.Background.Gradient1.Point2XPercent = 0
+      StateClicked.Background.Gradient1.Point2YPercent = 0
+      StateClicked.Background.Gradient2.StartColor = clWhite
+      StateClicked.Background.Gradient2.EndColor = clBlack
+      StateClicked.Background.Gradient2.GradientType = gtLinear
+      StateClicked.Background.Gradient2.Point1XPercent = 0
+      StateClicked.Background.Gradient2.Point1YPercent = 0
+      StateClicked.Background.Gradient2.Point2XPercent = 0
+      StateClicked.Background.Gradient2.Point2YPercent = 100
+      StateClicked.Background.Gradient1EndPercent = 100
+      StateClicked.Background.Style = bbsGradient
+      StateClicked.Border.Style = bboNone
+      StateClicked.FontEx.Color = 16770790
+      StateClicked.FontEx.FontQuality = fqSystemClearType
+      StateClicked.FontEx.Shadow = True
+      StateClicked.FontEx.ShadowRadius = 2
+      StateClicked.FontEx.ShadowOffsetX = 1
+      StateClicked.FontEx.ShadowOffsetY = 1
+      StateClicked.FontEx.Style = [fsBold]
+      StateHover.Background.Gradient1.StartColor = 16744448
+      StateHover.Background.Gradient1.EndColor = 8404992
+      StateHover.Background.Gradient1.GradientType = gtRadial
+      StateHover.Background.Gradient1.Point1XPercent = 50
+      StateHover.Background.Gradient1.Point1YPercent = 100
+      StateHover.Background.Gradient1.Point2XPercent = 0
+      StateHover.Background.Gradient1.Point2YPercent = 0
+      StateHover.Background.Gradient2.StartColor = clWhite
+      StateHover.Background.Gradient2.EndColor = clBlack
+      StateHover.Background.Gradient2.GradientType = gtLinear
+      StateHover.Background.Gradient2.Point1XPercent = 0
+      StateHover.Background.Gradient2.Point1YPercent = 0
+      StateHover.Background.Gradient2.Point2XPercent = 0
+      StateHover.Background.Gradient2.Point2YPercent = 100
+      StateHover.Background.Gradient1EndPercent = 100
+      StateHover.Background.Style = bbsGradient
+      StateHover.Border.Style = bboNone
+      StateHover.FontEx.Color = clWhite
+      StateHover.FontEx.FontQuality = fqSystemClearType
+      StateHover.FontEx.Shadow = True
+      StateHover.FontEx.ShadowRadius = 2
+      StateHover.FontEx.ShadowOffsetX = 1
+      StateHover.FontEx.ShadowOffsetY = 1
+      StateHover.FontEx.Style = [fsBold]
+      StateNormal.Background.Gradient1.StartColor = clGray
+      StateNormal.Background.Gradient1.EndColor = clGray
+      StateNormal.Background.Gradient1.GradientType = gtLinear
+      StateNormal.Background.Gradient1.Point1XPercent = 0
+      StateNormal.Background.Gradient1.Point1YPercent = 0
+      StateNormal.Background.Gradient1.Point2XPercent = 0
+      StateNormal.Background.Gradient1.Point2YPercent = 100
+      StateNormal.Background.Gradient2.StartColor = clGray
+      StateNormal.Background.Gradient2.EndColor = clGray
+      StateNormal.Background.Gradient2.GradientType = gtRadial
+      StateNormal.Background.Gradient2.Point1XPercent = 50
+      StateNormal.Background.Gradient2.Point1YPercent = 100
+      StateNormal.Background.Gradient2.Point2XPercent = 0
+      StateNormal.Background.Gradient2.Point2YPercent = 0
+      StateNormal.Background.Gradient1EndPercent = 60
+      StateNormal.Background.Style = bbsGradient
+      StateNormal.Border.Style = bboNone
+      StateNormal.FontEx.Color = clWhite
+      StateNormal.FontEx.FontQuality = fqSystemClearType
+      StateNormal.FontEx.Height = 10
+      StateNormal.FontEx.Shadow = True
+      StateNormal.FontEx.ShadowRadius = 2
+      StateNormal.FontEx.ShadowOffsetX = 1
+      StateNormal.FontEx.ShadowOffsetY = 1
+      StateNormal.FontEx.Style = [fsBold]
+      Caption = 'Kelly Up'
+      Color = clAqua
+      DropDownWidth = 16
+      DropDownArrowSize = 8
+      GlobalOpacity = 255
+      OnClick = KellyUpClick
+      ParentColor = False
+      Rounding.RoundX = 6
+      Rounding.RoundY = 6
+      RoundingDropDown.RoundX = 1
+      RoundingDropDown.RoundY = 1
+      TextApplyGlobalOpacity = False
+      MemoryUsage = bmuHigh
+    end
+    object KellyDown: TBCButton
+      Left = 109
+      Height = 20
+      Top = 165
+      Width = 91
+      StateClicked.Background.Gradient1.StartColor = 8404992
+      StateClicked.Background.Gradient1.EndColor = 4194304
+      StateClicked.Background.Gradient1.GradientType = gtRadial
+      StateClicked.Background.Gradient1.Point1XPercent = 50
+      StateClicked.Background.Gradient1.Point1YPercent = 100
+      StateClicked.Background.Gradient1.Point2XPercent = 0
+      StateClicked.Background.Gradient1.Point2YPercent = 0
+      StateClicked.Background.Gradient2.StartColor = clWhite
+      StateClicked.Background.Gradient2.EndColor = clBlack
+      StateClicked.Background.Gradient2.GradientType = gtLinear
+      StateClicked.Background.Gradient2.Point1XPercent = 0
+      StateClicked.Background.Gradient2.Point1YPercent = 0
+      StateClicked.Background.Gradient2.Point2XPercent = 0
+      StateClicked.Background.Gradient2.Point2YPercent = 100
+      StateClicked.Background.Gradient1EndPercent = 100
+      StateClicked.Background.Style = bbsGradient
+      StateClicked.Border.Style = bboNone
+      StateClicked.FontEx.Color = 16770790
+      StateClicked.FontEx.FontQuality = fqSystemClearType
+      StateClicked.FontEx.Shadow = True
+      StateClicked.FontEx.ShadowRadius = 2
+      StateClicked.FontEx.ShadowOffsetX = 1
+      StateClicked.FontEx.ShadowOffsetY = 1
+      StateClicked.FontEx.Style = [fsBold]
+      StateHover.Background.Gradient1.StartColor = 16744448
+      StateHover.Background.Gradient1.EndColor = 8404992
+      StateHover.Background.Gradient1.GradientType = gtRadial
+      StateHover.Background.Gradient1.Point1XPercent = 50
+      StateHover.Background.Gradient1.Point1YPercent = 100
+      StateHover.Background.Gradient1.Point2XPercent = 0
+      StateHover.Background.Gradient1.Point2YPercent = 0
+      StateHover.Background.Gradient2.StartColor = clWhite
+      StateHover.Background.Gradient2.EndColor = clBlack
+      StateHover.Background.Gradient2.GradientType = gtLinear
+      StateHover.Background.Gradient2.Point1XPercent = 0
+      StateHover.Background.Gradient2.Point1YPercent = 0
+      StateHover.Background.Gradient2.Point2XPercent = 0
+      StateHover.Background.Gradient2.Point2YPercent = 100
+      StateHover.Background.Gradient1EndPercent = 100
+      StateHover.Background.Style = bbsGradient
+      StateHover.Border.Style = bboNone
+      StateHover.FontEx.Color = clWhite
+      StateHover.FontEx.FontQuality = fqSystemClearType
+      StateHover.FontEx.Shadow = True
+      StateHover.FontEx.ShadowRadius = 2
+      StateHover.FontEx.ShadowOffsetX = 1
+      StateHover.FontEx.ShadowOffsetY = 1
+      StateHover.FontEx.Style = [fsBold]
+      StateNormal.Background.Gradient1.StartColor = clGray
+      StateNormal.Background.Gradient1.EndColor = clGray
+      StateNormal.Background.Gradient1.GradientType = gtLinear
+      StateNormal.Background.Gradient1.Point1XPercent = 0
+      StateNormal.Background.Gradient1.Point1YPercent = 0
+      StateNormal.Background.Gradient1.Point2XPercent = 0
+      StateNormal.Background.Gradient1.Point2YPercent = 100
+      StateNormal.Background.Gradient2.StartColor = clGray
+      StateNormal.Background.Gradient2.EndColor = clGray
+      StateNormal.Background.Gradient2.GradientType = gtRadial
+      StateNormal.Background.Gradient2.Point1XPercent = 50
+      StateNormal.Background.Gradient2.Point1YPercent = 100
+      StateNormal.Background.Gradient2.Point2XPercent = 0
+      StateNormal.Background.Gradient2.Point2YPercent = 0
+      StateNormal.Background.Gradient1EndPercent = 60
+      StateNormal.Background.Style = bbsGradient
+      StateNormal.Border.Style = bboNone
+      StateNormal.FontEx.Color = clWhite
+      StateNormal.FontEx.FontQuality = fqSystemClearType
+      StateNormal.FontEx.Height = 10
+      StateNormal.FontEx.Shadow = True
+      StateNormal.FontEx.ShadowRadius = 2
+      StateNormal.FontEx.ShadowOffsetX = 1
+      StateNormal.FontEx.ShadowOffsetY = 1
+      StateNormal.FontEx.Style = [fsBold]
+      Caption = 'Kelly Down'
+      Color = clNone
+      DropDownWidth = 16
+      DropDownArrowSize = 8
+      GlobalOpacity = 255
+      OnClick = KellyDownClick
+      ParentColor = False
+      Rounding.RoundX = 6
+      Rounding.RoundY = 6
+      RoundingDropDown.RoundX = 1
+      RoundingDropDown.RoundY = 1
+      TextApplyGlobalOpacity = False
+      MemoryUsage = bmuHigh
+    end
+    object Panel1: TPanel
+      Left = 208
+      Height = 20
+      Top = 165
+      Width = 104
+      Color = 1257668
+      ParentColor = False
+      TabOrder = 3
+    end
+    object AutoDrillCheckBox: TCheckBoxThemed
+      Left = 224
+      Height = 18
+      Top = 167
+      Width = 80
+      AutoSize = False
+      Caption = 'AutoDrill'
+      Font.Color = clBlack
+      Font.Height = 10
+      Font.Name = 'Sans'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+      TabOrder = 2
+    end
+  end
+  object Messages: TGroupBox
+    Left = 8
+    Height = 208
+    Top = 392
+    Width = 872
+    Caption = 'Messages'
+    ClientHeight = 189
+    ClientWidth = 862
+    DragCursor = crDefault
+    Font.Color = clTeal
+    Font.Height = -16
+    Font.Name = 'Sans'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 2
+    object Memo1: TMemo
+      Cursor = crIBeam
+      Left = 0
+      Height = 176
+      Top = 8
+      Width = 857
+      Color = clBlack
+      Font.Color = clOlive
+      Font.Height = -13
+      Font.Name = 'Sans'
+      Lines.Strings = (      )
+      OnChange = Memo1Change
+      ParentFont = False
+      ParentShowHint = False
+      ReadOnly = True
+      ScrollBars = ssVertical
+      TabOrder = 0
+    end
+  end
+  object DrillingFluids: TGroupBox
+    Left = 289
+    Height = 152
+    Top = 232
+    Width = 326
+    Caption = 'Drilling Fluids'
+    ClientHeight = 133
+    ClientWidth = 316
+    Color = 16747205
+    Font.Color = clTeal
+    Font.Height = -16
+    Font.Name = 'Sans'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 4
+    object MudWeightInValue: TLabel
+      Left = 160
+      Height = 15
+      Top = 10
+      Width = 56
+      Alignment = taRightJustify
+      AutoSize = False
+      Caption = '999.999'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object MudWeightOutValue: TLabel
+      Left = 160
+      Height = 15
+      Top = 40
+      Width = 56
+      Alignment = taRightJustify
+      AutoSize = False
+      Caption = '999.999'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object MudWeightInUoMLabel: TStaticText
+      Left = 227
+      Height = 20
+      Top = 10
+      Width = 65
+      Caption = 'Units'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      ParentFont = False
+      TabOrder = 0
+    end
+    object MudWeightOutUoMLabel: TStaticText
+      Left = 227
+      Height = 20
+      Top = 40
+      Width = 65
+      Caption = 'Units'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      ParentFont = False
+      TabOrder = 1
+    end
+    object MudWeightInText: TStaticText
+      Left = 10
+      Height = 20
+      Top = 10
+      Width = 114
+      Caption = 'Mud Weight In'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      ParentFont = False
+      TabOrder = 2
+    end
+    object MudWeightOutText: TStaticText
+      Left = 10
+      Height = 20
+      Top = 40
+      Width = 114
+      Caption = 'Mud Weight Out'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      ParentFont = False
+      TabOrder = 3
+    end
+    object ECDText: TStaticText
+      Left = 10
+      Height = 20
+      Top = 70
+      Width = 120
+      Caption = 'Eq. Circ. Density'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      ParentFont = False
+      TabOrder = 4
+    end
+    object ECDUoMLabel: TStaticText
+      Left = 227
+      Height = 20
+      Top = 70
+      Width = 67
+      Caption = 'Units'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      ParentFont = False
+      TabOrder = 5
+    end
+    object ECDValue: TLabel
+      Left = 160
+      Height = 15
+      Top = 70
+      Width = 56
+      Alignment = taRightJustify
+      AutoSize = False
+      Caption = '999.999'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object PowerLawRadioButton: TRadioButton
+      Left = 112
+      Height = 18
+      Top = 104
+      Width = 91
+      Caption = 'Power Law'
+      Checked = True
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      OnChange = PowerLawRadioButtonChange
+      ParentFont = False
+      TabOrder = 6
+      TabStop = True
+    end
+    object BinghamRadioButton: TRadioButton
+      Left = 10
+      Height = 18
+      Top = 103
+      Width = 79
+      Caption = 'Bingham'
+      Font.Color = clMaroon
+      Font.Height = -13
+      Font.Name = 'Sans'
+      OnChange = BinghamRadioButtonChange
+      ParentColor = False
+      ParentFont = False
+      TabOrder = 7
+    end
+  end
+  object Commands: TGroupBox
+    Left = 10
+    Height = 54
+    Top = 608
+    Width = 870
+    Caption = 'Commands'
+    ClientHeight = 35
+    ClientWidth = 860
+    TabOrder = 5
+    object CommandLine: TEdit
+      Left = 8
+      Height = 22
+      Top = 8
+      Width = 846
+      OnClick = CommandLineClick
+      OnKeyPress = CommandLineKeyPress
+      TabOrder = 0
+      Text = 'Type your commands here....'
+    end
+  end
+  object FlowBox: TGroupBox
+    Left = 624
+    Height = 120
+    Top = 176
+    Width = 249
+    Caption = 'Flow'
+    ClientHeight = 101
+    ClientWidth = 239
+    Color = 16759040
+    Font.Color = clTeal
+    Font.Height = -16
+    Font.Name = 'Sans'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 6
+    object FlowOutText: TStaticText
+      Left = 7
+      Height = 18
+      Top = 26
+      Width = 91
+      Caption = 'Flow Out'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      ParentFont = False
+      TabOrder = 0
+    end
+    object ReturnPitText: TStaticText
+      Left = 7
+      Height = 18
+      Top = 48
+      Width = 96
+      Caption = 'Return Pit'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      ParentFont = False
+      TabOrder = 1
+    end
+    object DiffFlowText: TStaticText
+      Left = 7
+      Height = 18
+      Top = 70
+      Width = 98
+      Caption = 'Diff. Flow'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      ParentFont = False
+      TabOrder = 2
+    end
+    object FlowInUoMLabel: TStaticText
+      Left = 185
+      Height = 20
+      Top = 8
+      Width = 55
+      Caption = 'Units'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      ParentFont = False
+      TabOrder = 3
+    end
+    object FlowOutUoMLabel: TStaticText
+      Left = 185
+      Height = 20
+      Top = 26
+      Width = 55
+      Caption = 'Units'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      ParentFont = False
+      TabOrder = 4
+    end
+    object ReturnPitUoMLabel: TStaticText
+      Left = 185
+      Height = 20
+      Top = 51
+      Width = 55
+      Caption = 'Units'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      ParentFont = False
+      TabOrder = 5
+    end
+    object DiffFlowUoMLabel: TStaticText
+      Left = 185
+      Height = 20
+      Top = 71
+      Width = 55
+      Caption = 'Units'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      ParentFont = False
+      TabOrder = 6
+    end
+    object FlowInValue: TLabel
+      Left = 89
+      Height = 15
+      Top = 8
+      Width = 90
+      Alignment = taRightJustify
+      AutoSize = False
+      Caption = '999.999'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object FlowOutValue: TLabel
+      Left = 89
+      Height = 15
+      Top = 29
+      Width = 90
+      Alignment = taRightJustify
+      AutoSize = False
+      Caption = '999.999'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object ReturnPitValue: TLabel
+      Left = 88
+      Height = 15
+      Top = 51
+      Width = 90
+      Alignment = taRightJustify
+      AutoSize = False
+      Caption = '999.999'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object DiffFlowValue: TLabel
+      Left = 89
+      Height = 15
+      Top = 73
+      Width = 90
+      Alignment = taRightJustify
+      AutoSize = False
+      Caption = '999.999'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object FlowInText: TStaticText
+      Left = 7
+      Height = 18
+      Top = 5
+      Width = 91
+      Caption = 'Flow In'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      ParentFont = False
+      TabOrder = 7
+    end
+  end
+  object PressureBox: TGroupBox
+    Left = 624
+    Height = 88
+    Top = 296
+    Width = 249
+    Caption = 'Pressure'
+    ClientHeight = 69
+    ClientWidth = 239
+    Color = 1425664
+    Font.Color = clTeal
+    Font.Height = -16
+    Font.Name = 'Sans'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 7
+    object StandPipePressureText: TStaticText
+      Left = 10
+      Height = 20
+      Top = 8
+      Width = 98
+      Caption = 'Stand Pipe Pr.'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      ParentFont = False
+      TabOrder = 0
+    end
+    object StandPipePressureUoMLabel: TStaticText
+      Left = 192
+      Height = 20
+      Top = 8
+      Width = 55
+      Caption = 'Units'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      ParentFont = False
+      TabOrder = 1
+    end
+    object StandPipePressureValue: TLabel
+      Left = 89
+      Height = 15
+      Top = 8
+      Width = 97
+      Alignment = taRightJustify
+      AutoSize = False
+      Caption = '999.999'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+  end
+  object BOPBox: TGroupBox
+    Left = 624
+    Height = 168
+    Top = 8
+    Width = 249
+    Caption = 'Blow Out Preventers'
+    ClientHeight = 149
+    ClientWidth = 239
+    Color = 1998772
+    Font.Color = clTeal
+    Font.Height = -16
+    Font.Name = 'Sans'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 8
+    object HydrilText: TStaticText
+      Left = 10
+      Height = 20
+      Top = 10
+      Width = 92
+      Caption = 'Hydril'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      ParentFont = False
+      TabOrder = 0
+    end
+    object BlindRAMsText: TStaticText
+      Left = 10
+      Height = 20
+      Top = 32
+      Width = 92
+      Caption = 'Blind RAMs'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      ParentFont = False
+      TabOrder = 1
+    end
+    object PipeRAMsText: TStaticText
+      Left = 11
+      Height = 20
+      Top = 56
+      Width = 97
+      Caption = 'Pipe RAMs'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      ParentFont = False
+      TabOrder = 2
+    end
+    object ChokeLineText: TStaticText
+      Left = 11
+      Height = 20
+      Top = 84
+      Width = 96
+      Caption = 'Choke Line'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      ParentFont = False
+      TabOrder = 3
+    end
+    object ChokeMinus: TButton
+      Left = 87
+      Height = 31
+      Top = 74
+      Width = 26
+      Caption = '-'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      OnClick = ChokeMinusClick
+      ParentFont = False
+      TabOrder = 4
+    end
+    object ChokePlus: TButton
+      Left = 115
+      Height = 31
+      Top = 74
+      Width = 24
+      Caption = '+'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      OnClick = ChokePlusClick
+      ParentFont = False
+      TabOrder = 5
+    end
+    object ChokeUoM: TStaticText
+      Left = 192
+      Height = 21
+      Top = 83
+      Width = 31
+      Caption = '%'
+      Font.Color = clBlack
+      Font.Height = -16
+      Font.Name = 'Sans'
+      ParentFont = False
+      TabOrder = 6
+    end
+    object HydrilValue: TLabel
+      Left = 115
+      Height = 15
+      Top = 10
+      Width = 50
+      AutoSize = False
+      Caption = '?'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object BlindRAMsValue: TLabel
+      Left = 115
+      Height = 18
+      Top = 32
+      Width = 50
+      AutoSize = False
+      Caption = '?'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object PipeRAMsValue: TLabel
+      Left = 115
+      Height = 17
+      Top = 56
+      Width = 50
+      AutoSize = False
+      Caption = '?'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object ChokeValue: TLabel
+      Left = 136
+      Height = 17
+      Top = 84
+      Width = 56
+      Alignment = taRightJustify
+      AutoSize = False
+      Caption = '999.99'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object AnnularPressureText: TStaticText
+      Left = 11
+      Height = 18
+      Top = 105
+      Width = 98
+      Caption = 'Annular Pr.'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      ParentFont = False
+      TabOrder = 7
+    end
+    object AnnularPressureValue: TLabel
+      Left = 87
+      Height = 17
+      Top = 105
+      Width = 103
+      Alignment = taRightJustify
+      AutoSize = False
+      Caption = '999.99'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object AnnularPressureUoMLabel: TStaticText
+      Left = 191
+      Height = 20
+      Top = 105
+      Width = 55
+      Caption = 'Units'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      ParentFont = False
+      TabOrder = 8
+    end
+    object CasingPressureUoMLabel: TStaticText
+      Left = 191
+      Height = 20
+      Top = 124
+      Width = 55
+      Caption = 'Units'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      ParentFont = False
+      TabOrder = 9
+    end
+    object CasingPressureValue: TLabel
+      Left = 92
+      Height = 15
+      Top = 125
+      Width = 98
+      Alignment = taRightJustify
+      AutoSize = False
+      Caption = '999.99'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object CasingPressureText: TStaticText
+      Left = 11
+      Height = 20
+      Top = 124
+      Width = 98
+      Caption = 'Casing Pr.'
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Sans'
+      ParentFont = False
+      TabOrder = 10
+    end
+  end
+  object DataBox: TGroupBox
+    Left = 880
+    Height = 651
+    Top = 8
+    Width = 554
+    Caption = 'Data Viewer'
+    ClientHeight = 632
+    ClientWidth = 544
+    Color = clCream
+    ParentColor = False
+    TabOrder = 9
+    object Panel2: TPanel
+      Left = 8
+      Height = 393
+      Top = 7
+      Width = 264
+      BevelColor = clBlack
+      ClientHeight = 393
+      ClientWidth = 264
+      TabOrder = 0
+      object AnnVolumeText: TStaticText
+        Left = 10
+        Height = 20
+        Top = 29
+        Width = 114
+        Caption = 'Ann Volume'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 0
+      end
+      object WellVolumeText: TStaticText
+        Left = 10
+        Height = 20
+        Top = 53
+        Width = 114
+        Caption = 'Well Volume'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 1
+      end
+      object HoleVolumeText: TStaticText
+        Left = 10
+        Height = 20
+        Top = 77
+        Width = 114
+        Caption = 'Hole Volume'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 2
+      end
+      object MudVolumeText: TStaticText
+        Left = 10
+        Height = 20
+        Top = 101
+        Width = 114
+        Caption = 'Mud Volume'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 3
+      end
+      object LagDownTimeText: TStaticText
+        Left = 10
+        Height = 20
+        Top = 215
+        Width = 114
+        Caption = 'Lag Down Time'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 4
+      end
+      object PipeCapacityText: TStaticText
+        Left = 10
+        Height = 20
+        Top = 162
+        Width = 114
+        Caption = 'Pipe Capacity'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 5
+      end
+      object LagDownStrokeText: TStaticText
+        Left = 10
+        Height = 20
+        Top = 235
+        Width = 114
+        Caption = 'Lag Down Strokes'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 6
+      end
+      object LagUpStrokeText: TStaticText
+        Left = 10
+        Height = 20
+        Top = 286
+        Width = 114
+        Caption = 'Lag Up Strokes'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 7
+      end
+      object LagUpTimeText: TStaticText
+        Left = 10
+        Height = 20
+        Top = 266
+        Width = 114
+        Caption = 'Lag Up Time'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 8
+      end
+      object PipeDisplacementText: TStaticText
+        Left = 10
+        Height = 20
+        Top = 186
+        Width = 118
+        Caption = 'Pipe Displacement'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 9
+      end
+      object AnnVolUoM: TStaticText
+        Left = 221
+        Height = 20
+        Top = 29
+        Width = 39
+        Caption = 'Units'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 10
+      end
+      object WellVolUoM: TStaticText
+        Left = 221
+        Height = 20
+        Top = 50
+        Width = 39
+        Caption = 'Units'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 11
+      end
+      object HoleVolUoM: TStaticText
+        Left = 221
+        Height = 20
+        Top = 75
+        Width = 40
+        Caption = 'Units'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 12
+      end
+      object MudVolUoM: TStaticText
+        Left = 221
+        Height = 20
+        Top = 100
+        Width = 40
+        Caption = 'Units'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 13
+      end
+      object AnnVol: TLabel
+        Left = 126
+        Height = 15
+        Top = 31
+        Width = 92
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = '9999.99'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object WellVol: TLabel
+        Left = 126
+        Height = 15
+        Top = 55
+        Width = 92
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = '9999.99'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object HoleVol: TLabel
+        Left = 128
+        Height = 15
+        Top = 77
+        Width = 90
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = '9999.99'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object MudVol: TLabel
+        Left = 127
+        Height = 15
+        Top = 101
+        Width = 92
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = '9999.99'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object LagDownTimeUoM: TStaticText
+        Left = 220
+        Height = 20
+        Top = 218
+        Width = 39
+        Caption = 'Units'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 14
+      end
+      object LagDownStrokesUoM: TStaticText
+        Left = 220
+        Height = 20
+        Top = 234
+        Width = 39
+        Caption = 'Units'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 15
+      end
+      object LagUpTimeUoM: TStaticText
+        Left = 220
+        Height = 20
+        Top = 266
+        Width = 39
+        Caption = 'Units'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 16
+      end
+      object LagUpStrokesUoM: TStaticText
+        Left = 220
+        Height = 20
+        Top = 286
+        Width = 38
+        Caption = 'Units'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 17
+      end
+      object LagDownTime: TLabel
+        Left = 128
+        Height = 15
+        Top = 218
+        Width = 90
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = '999.999'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object LagDownStrokes: TLabel
+        Left = 128
+        Height = 15
+        Top = 235
+        Width = 90
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = '999.999'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object LagUpTime: TLabel
+        Left = 127
+        Height = 15
+        Top = 266
+        Width = 90
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = '999.999'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object LagUpStrokes: TLabel
+        Left = 128
+        Height = 15
+        Top = 286
+        Width = 90
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = '999.999'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object PipeCapacity: TLabel
+        Left = 128
+        Height = 15
+        Top = 162
+        Width = 89
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = '999.999'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object PipeCapacityUoM: TStaticText
+        Left = 219
+        Height = 20
+        Top = 162
+        Width = 39
+        Caption = 'Units'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 18
+      end
+      object PipeDisplacementUoM: TStaticText
+        Left = 221
+        Height = 15
+        Top = 186
+        Width = 38
+        Caption = 'Units'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 19
+      end
+      object PipeDisplacement: TLabel
+        Left = 128
+        Height = 15
+        Top = 186
+        Width = 89
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = '999.999'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object TotalCircStrks: TLabel
+        Left = 129
+        Height = 15
+        Top = 314
+        Width = 90
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = '999.999'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object TotalStrokes: TLabel
+        Left = 129
+        Height = 15
+        Top = 338
+        Width = 90
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = '999.999'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object ExcessMudUoM: TStaticText
+        Left = 221
+        Height = 20
+        Top = 124
+        Width = 38
+        Caption = 'Units'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 21
+      end
+      object ExcessMud: TLabel
+        Left = 129
+        Height = 15
+        Top = 124
+        Width = 90
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = '999.999'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object ExcessMudText: TStaticText
+        Left = 10
+        Height = 20
+        Top = 124
+        Width = 86
+        Caption = 'Excess Mud'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 23
+      end
+      object TotalCircStrksUoM: TStaticText
+        Left = 221
+        Height = 20
+        Top = 312
+        Width = 39
+        Caption = 'Units'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 20
+      end
+      object TotalStrokesUoM: TStaticText
+        Left = 221
+        Height = 20
+        Top = 336
+        Width = 38
+        Caption = 'Units'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 22
+      end
+      object TotalStrokesText: TStaticText
+        Left = 12
+        Height = 20
+        Top = 336
+        Width = 86
+        Caption = 'Total Strokes'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 24
+      end
+      object TotalCircStrksText: TStaticText
+        Left = 10
+        Height = 20
+        Top = 311
+        Width = 118
+        Caption = 'Total Circ. Strokes'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 25
+      end
+    end
+    object Panel3: TPanel
+      Left = 8
+      Height = 195
+      Top = 408
+      Width = 264
+      BevelColor = clBlack
+      ClientHeight = 195
+      ClientWidth = 264
+      TabOrder = 1
+      object PipeMWText: TStaticText
+        Left = 8
+        Height = 20
+        Top = 32
+        Width = 94
+        Caption = 'Pipe Mud Wt.'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 0
+      end
+      object AnnMWText: TStaticText
+        Left = 8
+        Height = 20
+        Top = 48
+        Width = 114
+        Caption = 'Annular Mud Wt.'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 1
+      end
+      object AnnPVText: TStaticText
+        Left = 8
+        Height = 20
+        Top = 70
+        Width = 90
+        Caption = 'Annnular PV'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 2
+      end
+      object AnnYPText: TStaticText
+        Left = 8
+        Height = 20
+        Top = 88
+        Width = 78
+        Caption = 'AnnularYP'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 3
+      end
+      object PipeYPText: TStaticText
+        Left = 8
+        Height = 20
+        Top = 130
+        Width = 58
+        Caption = 'PipeYP'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 4
+      end
+      object PipePVText: TStaticText
+        Left = 8
+        Height = 20
+        Top = 111
+        Width = 62
+        Caption = 'Pipe PV'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 5
+      end
+      object TotalStrksText: TStaticText
+        Left = 16
+        Height = 16
+        Top = -96
+        Width = 88
+        Caption = 'Total Strokes'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 6
+      end
+      object PipeMWUoM: TStaticText
+        Left = 201
+        Height = 15
+        Top = 32
+        Width = 61
+        Caption = 'Units'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 7
+      end
+      object AnnMWUoM: TStaticText
+        Left = 201
+        Height = 15
+        Top = 48
+        Width = 62
+        Caption = 'Units'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 8
+      end
+      object PipeMW: TLabel
+        Left = 104
+        Height = 15
+        Top = 32
+        Width = 90
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = '999.999'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object AnnPVUoM: TStaticText
+        Left = 201
+        Height = 14
+        Top = 67
+        Width = 62
+        Caption = 'Units'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 9
+      end
+      object AnnYPUoM: TStaticText
+        Left = 201
+        Height = 17
+        Top = 86
+        Width = 62
+        Caption = 'Units'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 10
+      end
+      object PipePVUoM: TStaticText
+        Left = 201
+        Height = 20
+        Top = 110
+        Width = 62
+        Caption = 'Units'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 11
+      end
+      object PipeYPUoM: TStaticText
+        Left = 201
+        Height = 20
+        Top = 130
+        Width = 63
+        Caption = 'Units'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 12
+      end
+      object AnnPV: TLabel
+        Left = 105
+        Height = 15
+        Top = 67
+        Width = 90
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = '999.999'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object AnnYP: TLabel
+        Left = 105
+        Height = 15
+        Top = 88
+        Width = 90
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = '999.999'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object PipePV: TLabel
+        Left = 104
+        Height = 15
+        Top = 110
+        Width = 90
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = '999.999'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object PipeYP: TLabel
+        Left = 104
+        Height = 15
+        Top = 130
+        Width = 90
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = '999.999'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object AnnMW: TLabel
+        Left = 105
+        Height = 15
+        Top = 48
+        Width = 90
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = '999.999'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+    end
+    object Panel4: TPanel
+      Left = 280
+      Height = 234
+      Top = 7
+      Width = 256
+      BevelColor = clBlack
+      ClientHeight = 234
+      ClientWidth = 256
+      TabOrder = 2
+      object PressureLossesText: TStaticText
+        Left = 10
+        Height = 20
+        Top = 0
+        Width = 114
+        Caption = 'Pressure Losses'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 0
+      end
+      object PLPipeText: TStaticText
+        Left = 10
+        Height = 20
+        Top = 52
+        Width = 54
+        Caption = 'Pipe'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 1
+      end
+      object BitPLText: TStaticText
+        Left = 10
+        Height = 20
+        Top = 76
+        Width = 54
+        Caption = 'Bit'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 2
+      end
+      object AnnulusPLText: TStaticText
+        Left = 10
+        Height = 20
+        Top = 100
+        Width = 62
+        Caption = 'Annulus'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 3
+      end
+      object CirculatingPLText: TStaticText
+        Left = 10
+        Height = 20
+        Top = 157
+        Width = 78
+        Caption = 'Circulating'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 4
+      end
+      object FormationPressureGradientText: TStaticText
+        Left = 10
+        Height = 20
+        Top = 181
+        Width = 142
+        Caption = 'Form Pressure Grad.'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 5
+      end
+      object MACPText1: TStaticText
+        Left = 10
+        Height = 20
+        Top = 205
+        Width = 74
+        Caption = 'MACP'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 6
+      end
+      object SurfaceEquipmentPLText: TStaticText
+        Left = 10
+        Height = 20
+        Top = 28
+        Width = 134
+        Caption = 'Surface Equipmt.'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 7
+      end
+      object ChokePLText: TStaticText
+        Left = 10
+        Height = 20
+        Top = 133
+        Width = 62
+        Caption = 'Choke'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 8
+      end
+      object PLSurfUoM: TStaticText
+        Left = 211
+        Height = 20
+        Top = 28
+        Width = 44
+        Caption = 'Units'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 9
+      end
+      object PLPipeUoM: TStaticText
+        Left = 210
+        Height = 16
+        Top = 52
+        Width = 46
+        Caption = 'Units'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 10
+      end
+      object PLBitUoM: TStaticText
+        Left = 210
+        Height = 20
+        Top = 75
+        Width = 45
+        Caption = 'Units'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 11
+      end
+      object PLAnnUoM: TStaticText
+        Left = 209
+        Height = 20
+        Top = 95
+        Width = 46
+        Caption = 'Units'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 12
+      end
+      object PLSurf: TLabel
+        Left = 121
+        Height = 15
+        Top = 29
+        Width = 90
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = '999.999'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object PLPipe: TLabel
+        Left = 121
+        Height = 15
+        Top = 53
+        Width = 90
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = '999.999'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object PLBit: TLabel
+        Left = 120
+        Height = 15
+        Top = 75
+        Width = 90
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = '999.999'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object PLAnn: TLabel
+        Left = 121
+        Height = 15
+        Top = 97
+        Width = 90
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = '999.999'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object PLChokeUoM: TStaticText
+        Left = 211
+        Height = 16
+        Top = 132
+        Width = 45
+        Caption = 'Units'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 13
+      end
+      object PLCircUoM: TStaticText
+        Left = 211
+        Height = 16
+        Top = 156
+        Width = 45
+        Caption = 'Units'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 14
+      end
+      object FormPressGradUoM: TStaticText
+        Left = 210
+        Height = 17
+        Top = 179
+        Width = 45
+        Caption = 'Units'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 15
+      end
+      object MACPUoM: TStaticText
+        Left = 211
+        Height = 20
+        Top = 199
+        Width = 45
+        Caption = 'Units'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 16
+      end
+      object PLChoke: TLabel
+        Left = 122
+        Height = 15
+        Top = 133
+        Width = 90
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = '999.999'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object PLCIrc: TLabel
+        Left = 122
+        Height = 15
+        Top = 157
+        Width = 90
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = '999.999'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object FormPressGrad: TLabel
+        Left = 121
+        Height = 15
+        Top = 181
+        Width = 90
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = '999.999'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object MACP: TLabel
+        Left = 122
+        Height = 15
+        Top = 201
+        Width = 90
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = '999.999'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+    end
+    object Panel5: TPanel
+      Left = 280
+      Height = 216
+      Top = 247
+      Width = 256
+      BevelColor = clBlack
+      ClientHeight = 216
+      ClientWidth = 256
+      TabOrder = 3
+      object JetVelocityText: TStaticText
+        Left = 10
+        Height = 20
+        Top = 9
+        Width = 114
+        Caption = 'Jet Velocity'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 0
+      end
+      object ImpactForceText: TStaticText
+        Left = 10
+        Height = 20
+        Top = 33
+        Width = 114
+        Caption = 'Impact Force'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 1
+      end
+      object BitHPText: TStaticText
+        Left = 10
+        Height = 20
+        Top = 57
+        Width = 114
+        Caption = 'Bit Horsepower'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 2
+      end
+      object TotalHPText: TStaticText
+        Left = 10
+        Height = 20
+        Top = 98
+        Width = 114
+        Caption = 'Total HP'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 3
+      end
+      object AnnularBHPText: TStaticText
+        Left = 10
+        Height = 20
+        Top = 113
+        Width = 114
+        Caption = 'Annnular BHP'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 4
+      end
+      object BitEffText: TStaticText
+        Left = 10
+        Height = 20
+        Top = 77
+        Width = 114
+        Caption = 'Bit Efficiency'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 5
+      end
+      object AnnulusHhdText: TStaticText
+        Left = 10
+        Height = 20
+        Top = 176
+        Width = 114
+        Caption = 'Annulus Hhd'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 6
+      end
+      object PipeHhdText: TStaticText
+        Left = 10
+        Height = 20
+        Top = 161
+        Width = 114
+        Caption = 'Pipe Hhd'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 7
+      end
+      object AverageHhdText: TStaticText
+        Left = 10
+        Height = 20
+        Top = 133
+        Width = 114
+        Caption = 'Average Hhd'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 8
+      end
+      object JetVelUoM: TStaticText
+        Left = 213
+        Height = 15
+        Top = 13
+        Width = 39
+        Caption = 'Units'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 9
+      end
+      object ImpactForceUoM: TStaticText
+        Left = 213
+        Height = 15
+        Top = 33
+        Width = 39
+        Caption = 'Units'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 10
+      end
+      object BitHPUoM: TStaticText
+        Left = 213
+        Height = 15
+        Top = 56
+        Width = 40
+        Caption = 'Units'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 11
+      end
+      object BitEffUoM: TStaticText
+        Left = 213
+        Height = 18
+        Top = 77
+        Width = 40
+        Caption = 'Units'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 12
+      end
+      object JetVel: TLabel
+        Left = 122
+        Height = 15
+        Top = 14
+        Width = 90
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = '999.999'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object ImpactForce: TLabel
+        Left = 122
+        Height = 15
+        Top = 34
+        Width = 90
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = '999.999'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object BitHP: TLabel
+        Left = 121
+        Height = 15
+        Top = 57
+        Width = 90
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = '999.999'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object BitEff: TLabel
+        Left = 122
+        Height = 15
+        Top = 78
+        Width = 90
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = '999.999'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object AnnularBHPUoM: TStaticText
+        Left = 213
+        Height = 15
+        Top = 117
+        Width = 39
+        Caption = 'Units'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 13
+      end
+      object AverageHHDUoM: TStaticText
+        Left = 212
+        Height = 15
+        Top = 138
+        Width = 39
+        Caption = 'Units'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 14
+      end
+      object PipeHHDUoM: TStaticText
+        Left = 213
+        Height = 15
+        Top = 160
+        Width = 39
+        Caption = 'Units'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 15
+      end
+      object AnnulusHHDUoM: TStaticText
+        Left = 213
+        Height = 18
+        Top = 176
+        Width = 38
+        Caption = 'Units'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 16
+      end
+      object AnnularBHP: TLabel
+        Left = 122
+        Height = 15
+        Top = 118
+        Width = 90
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = '999.999'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object AnnularHHD: TLabel
+        Left = 121
+        Height = 15
+        Top = 138
+        Width = 90
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = '999.999'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object PipeHHD: TLabel
+        Left = 121
+        Height = 15
+        Top = 161
+        Width = 90
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = '999.999'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object AnnulusHHD: TLabel
+        Left = 121
+        Height = 15
+        Top = 176
+        Width = 90
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = '999.999'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object TotalHPUoM: TStaticText
+        Left = 213
+        Height = 16
+        Top = 98
+        Width = 40
+        Caption = 'Units'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 17
+      end
+      object TotalHP: TLabel
+        Left = 122
+        Height = 15
+        Top = 98
+        Width = 90
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = '999.999'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object AnnularUnderbalanceText: TStaticText
+        Left = 8
+        Height = 20
+        Top = 193
+        Width = 114
+        Caption = 'Underbalance'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 18
+      end
+      object AnnularUnderbalance: TLabel
+        Left = 119
+        Height = 15
+        Top = 195
+        Width = 90
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = '999.999'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object AnnularUnderbalanceUoM: TStaticText
+        Left = 214
+        Height = 18
+        Top = 195
+        Width = 38
+        Caption = 'Units'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 19
+      end
+    end
+    object Panel6: TPanel
+      Left = 280
+      Height = 132
+      Top = 472
+      Width = 256
+      BevelColor = clBlack
+      ClientHeight = 132
+      ClientWidth = 256
+      TabOrder = 4
+      object WOH: TLabel
+        Left = 123
+        Height = 15
+        Top = 25
+        Width = 90
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = '999.999'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object WOHUoM: TStaticText
+        Left = 216
+        Height = 20
+        Top = 24
+        Width = 46
+        Caption = 'Units'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 1
+      end
+      object StringWtUoM: TStaticText
+        Left = 216
+        Height = 20
+        Top = 45
+        Width = 45
+        Caption = 'Units'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 2
+      end
+      object StringWtText: TStaticText
+        Left = 16
+        Height = 20
+        Top = 45
+        Width = 126
+        Caption = 'String Weight'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 3
+      end
+      object WOHText: TStaticText
+        Left = 18
+        Height = 20
+        Top = 25
+        Width = 114
+        Caption = 'WOH'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        ParentFont = False
+        TabOrder = 0
+      end
+      object StringWt: TLabel
+        Left = 123
+        Height = 15
+        Top = 47
+        Width = 90
+        Alignment = taRightJustify
+        AutoSize = False
+        Caption = '999.999'
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Sans'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+    end
+  end
+  object MainMenu1: TMainMenu
+    Left = 80
+    Top = 65528
+    object MenuItem1File: TMenuItem
+      Caption = 'File'
+      object MenuItem1OpenFile: TMenuItem
+        Caption = 'Open File'
+        OnClick = MenuItem1OpenFileClick
+      end
+      object MenuItem1CreateFile: TMenuItem
+        Caption = 'Create File'
+        OnClick = MenuItem1CreateFileClick
+      end
+      object MenuItem1SaveFile: TMenuItem
+        Caption = 'Save File'
+        OnClick = MenuItem1SaveFileClick
+      end
+      object MenuItem1SaveAs: TMenuItem
+        Caption = 'Save As...'
+        OnClick = MenuItem1SaveAsClick
+      end
+      object MenuItem1Quit: TMenuItem
+        Caption = 'Quit'
+        OnClick = MenuItem1QuitClick
+      end
+    end
+    object MenuItem2Edit: TMenuItem
+      Caption = 'Edit'
+      object MenuItem2EditFile: TMenuItem
+        Caption = 'Edit Well File'
+        object MenuItem2DisplayWellData: TMenuItem
+          Caption = 'Well Data Summary'
+          Default = True
+          OnClick = MenuItem2DisplayWellDataClick
+        end
+        object MenuItem2GeneralData: TMenuItem
+          Caption = 'General Well Data'
+          OnClick = MenuItem2GeneralDataClick
+        end
+        object MenuItem2HoleProfile: TMenuItem
+          Caption = 'Hole Profile Data'
+          OnClick = MenuItem2HoleProfileClick
+        end
+        object MenuItem2DrillString: TMenuItem
+          Caption = 'Drill String'
+          OnClick = MenuItem2DrillStringClick
+        end
+        object MenuItem2BitData: TMenuItem
+          Caption = 'Bit Data'
+          OnClick = MenuItem2BitDataClick
+        end
+        object MenuItem2MudData: TMenuItem
+          Caption = 'Mud Data'
+          OnClick = MenuItem2MudDataClick
+        end
+        object MenuItem2PumpData: TMenuItem
+          Caption = 'Pump Data'
+          OnClick = MenuItem2PumpDataClick
+        end
+        object MenuItem2SurfaceEquipment: TMenuItem
+          Caption = 'Surface Equipment Data'
+          OnClick = MenuItem2SurfaceEquipmentClick
+        end
+        object MenuItem2WellTestData: TMenuItem
+          Caption = 'Well Test Data'
+          OnClick = MenuItem2WellTestDataClick
+        end
+        object MenuItem2Geology: TMenuItem
+          Caption = 'Geology'
+          OnClick = MenuItem2GeologyClick
+        end
+      end
+      object MenuItem2Preferences: TMenuItem
+        Caption = 'Preferences'
+        object MenuItem2Defaults: TMenuItem
+          Caption = 'Defaults'
+          OnClick = MenuItem2DefaultsClick
+        end
+        object MenuItem2Units: TMenuItem
+          Caption = 'Units Of Measure'
+          OnClick = MenuItem2UnitsClick
+        end
+      end
+    end
+    object MenuItem3Simulate: TMenuItem
+      Caption = 'Simulate'
+      object MenuItem3Start: TMenuItem
+        Caption = 'Start'
+        OnClick = MenuItem3StartClick
+      end
+      object MenuItem3Stop: TMenuItem
+        Caption = 'Stop'
+        OnClick = MenuItem3StopClick
+      end
+      object MenuItem3Pause: TMenuItem
+        Caption = 'Pause'
+        OnClick = MenuItem3PauseClick
+      end
+    end
+    object MenuItem4Help: TMenuItem
+      Caption = 'Help'
+      object MenuItem4About: TMenuItem
+        Caption = 'About'
+        OnClick = MenuItem4AboutClick
+      end
+      object MenuItem4ShowHelp: TMenuItem
+        Caption = 'Show Help'
+      end
+    end
+  end
+  object FileOpenDialog1: TOpenDialog
+    Left = 144
+    Top = 65528
+  end
+  object FileSaveDialog1: TSaveDialog
+    Left = 192
+    Top = 65528
+  end
+  object SelectDirectoryDialog1: TSelectDirectoryDialog
+    Left = 240
+  end
+end
