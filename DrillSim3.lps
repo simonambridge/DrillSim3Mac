@@ -3,7 +3,7 @@
   <ProjectSession>
     <Version Value="11"/>
     <BuildModes Active="Default"/>
-    <Units Count="49">
+    <Units Count="50">
       <Unit0>
         <Filename Value="DrillSim3.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -15,7 +15,7 @@
       <Unit1>
         <Filename Value="DrillSimVariables.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="4"/>
+        <EditorIndex Value="5"/>
         <TopLine Value="340"/>
         <CursorPos X="6" Y="260"/>
         <UsageCount Value="228"/>
@@ -169,9 +169,9 @@
       <Unit17>
         <Filename Value="DrillSimDataResets.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="2"/>
-        <TopLine Value="124"/>
-        <CursorPos X="5" Y="112"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="123"/>
+        <CursorPos X="58" Y="148"/>
         <UsageCount Value="211"/>
         <Loaded Value="True"/>
       </Unit17>
@@ -201,7 +201,7 @@
       <Unit21>
         <Filename Value="DrillSimUnitsOfMeasure.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="6"/>
+        <EditorIndex Value="7"/>
         <TopLine Value="62"/>
         <CursorPos X="18" Y="103"/>
         <UsageCount Value="211"/>
@@ -210,7 +210,7 @@
       <Unit22>
         <Filename Value="DrillSimUtilities.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="8"/>
+        <EditorIndex Value="9"/>
         <CursorPos X="10" Y="13"/>
         <UsageCount Value="211"/>
         <Loaded Value="True"/>
@@ -241,7 +241,7 @@
         <ComponentName Value="DisplayWellDataForm"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="7"/>
+        <EditorIndex Value="8"/>
         <TopLine Value="382"/>
         <CursorPos X="22" Y="384"/>
         <UsageCount Value="211"/>
@@ -391,7 +391,7 @@
       <Unit43>
         <Filename Value="SimulateUpdate.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="5"/>
+        <EditorIndex Value="6"/>
         <TopLine Value="250"/>
         <CursorPos X="64" Y="282"/>
         <UsageCount Value="211"/>
@@ -423,7 +423,7 @@
       <Unit47>
         <Filename Value="DrillSimStartup.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="3"/>
+        <EditorIndex Value="4"/>
         <TopLine Value="52"/>
         <CursorPos X="24" Y="35"/>
         <UsageCount Value="211"/>
@@ -432,14 +432,20 @@
       <Unit48>
         <Filename Value="../../../.lazarus/onlinepackagemanager/packages/bgracontrols-master/bgrasvgtheme.pas"/>
         <UnitName Value="BGRASVGTheme"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="434"/>
-        <CursorPos Y="459"/>
-        <UsageCount Value="10"/>
+        <TopLine Value="379"/>
+        <CursorPos Y="396"/>
+        <UsageCount Value="216"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit48>
+      <Unit49>
+        <Filename Value="synapse40/source/lib/blcksock.pas"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="2"/>
+        <UsageCount Value="143"/>
+        <Loaded Value="True"/>
+      </Unit49>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>

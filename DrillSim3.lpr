@@ -35,6 +35,7 @@ begin
   RequireDerivedFormResource := True;
 
   writeln('DrillSim3.lpr : Application.Initialize');
+  Application.Title:='DrillSim3Mac';
   Application.Scaled:=True;
   Application.Initialize;
 
